@@ -2,8 +2,8 @@ package com.view;
 
 import com.processor.applicaion.ConsoleApplication;
 import com.processor.applicaion.Option;
-import com.viewmodel.PagodaApp;
-import com.viewmodel.PagodaAppMenu;
+import com.viewmodel.application.PagodaApp;
+import com.viewmodel.application.PagodaAppMenu;
 
 public class Guest extends PagodaAppMenu {
     public Guest(PagodaApp application) {

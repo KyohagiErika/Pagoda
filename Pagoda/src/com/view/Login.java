@@ -4,8 +4,8 @@ import com.processor.applicaion.ConsoleApplication;
 import com.processor.applicaion.ConsoleInput;
 import com.processor.applicaion.Option;
 import com.processor.enumeration.ConsoleInputMode;
-import com.viewmodel.PagodaApp;
-import com.viewmodel.PagodaAppMenu;
+import com.viewmodel.application.PagodaApp;
+import com.viewmodel.application.PagodaAppMenu;
 
 public class Login extends PagodaAppMenu {
     public Login(PagodaApp application) {

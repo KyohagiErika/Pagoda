@@ -1,9 +1,9 @@
 package com.view;
 
 import com.processor.applicaion.ConsoleApplication;
-import com.viewmodel.PagodaApp;
+import com.viewmodel.application.PagodaApp;
 import com.processor.applicaion.Option;
-import com.viewmodel.PagodaAppMenu;
+import com.viewmodel.application.PagodaAppMenu;
 
 public class Register extends PagodaAppMenu {
     public Register(PagodaApp application) {

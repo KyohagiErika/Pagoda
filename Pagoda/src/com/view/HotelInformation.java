@@ -3,8 +3,8 @@ package com.view;
 import com.processor.applicaion.ConsoleApplication;
 import com.processor.applicaion.Option;
 import com.view.Home;
-import com.viewmodel.PagodaApp;
-import com.viewmodel.PagodaAppMenu;
+import com.viewmodel.application.PagodaApp;
+import com.viewmodel.application.PagodaAppMenu;
 
 public class HotelInformation extends PagodaAppMenu {
     public HotelInformation(PagodaApp application) {
