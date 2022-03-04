@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: com.pagoda.Main
-Created-By: Le Thanh Long, Vo Minh Tien, Nguyen Gia Linh
