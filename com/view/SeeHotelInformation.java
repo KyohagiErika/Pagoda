@@ -7,6 +7,8 @@ import com.viewmodel.application.PagodaApp;
 import com.viewmodel.application.PagodaAppMenu;
 
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -46,7 +48,7 @@ public class SeeHotelInformation extends ConsolePage {
             System.out.println("Star Rank: "+records.get("starRank"));
             System.out.println("Hotel Image: "+records.get("image"));
             System.out.println("Hotel Location: "+records.get("location"));
-            System.out.println("Register Day: "+records.get("regDay"));
+            System.out.println("Register Day: "+ DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss").format(LocalDateTime.parse(records.get("regDay"), DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))));
             System.out.println();
         } catch (SQLException e) {
             application.writeLog(e);
