@@ -114,7 +114,6 @@ public class RoomManager extends MysqlFetch{
         String query ="DELETE FROM room " +
                 "WHERE room_id='"+requirement.get("roomID")+"'" +
                 " AND hotel_hotel_id='"+requirement.get("hotelID")+"'";
-        System.out.println(query);
         Statement stmt = connection.createStatement();
         stmt.executeUpdate(query);
     }
