@@ -47,6 +47,7 @@ public class DeleteHotel extends ConsolePage {
             }
             application.pause();
         } else {
+            application.clrscr();
             new HotelInformation((PagodaApp) application) {{
                 display();
                 forwardUser(PAGODA_MENU_DEFAULT_INPUT_MESSAGE);
