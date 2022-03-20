@@ -47,7 +47,7 @@ public class SeeRoomInformation extends ConsolePage {
                         application.pause();
                         System.out.println();
                         new SeeBookRoomListOfRoom((PagodaApp) application).display(new BookRoomManager(((PagodaApp) application).getConnection()),hotelID,viewRoom.get("roomID"));
-                        new BookRoom((PagodaApp) application).display(new SubscriptionManager(((PagodaApp) application).getConnection()), new BookRoomManager(((PagodaApp) application).getConnection()),hotelID,viewRoom.get("roomID"));
+                        new BookRoom((PagodaApp) application).display(new SubscriptionManager(((PagodaApp) application).getConnection()), new BookRoomManager(((PagodaApp) application).getConnection()),new RoomManager(((PagodaApp) application).getConnection()),hotelID,viewRoom.get("roomID"));
 
                         return null;
                     });

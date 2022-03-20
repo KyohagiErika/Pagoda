@@ -1,6 +1,7 @@
 package com.view;
 
 import com.model.BookRoomManager;
+import com.model.RoomManager;
 import com.model.SubscriptionManager;
 import com.processor.applicaion.*;
 import com.processor.exception.LambdaIncompatibleTypeException;
@@ -9,14 +10,10 @@ import com.viewmodel.application.PagodaAppMenu;
 import com.viewmodel.application.PagodaValidater;
 
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -26,7 +23,7 @@ public class BookRoom extends ConsolePage {
         super(application, "Book Room");
     }
 
-    public void display(SubscriptionManager subscription, BookRoomManager bookRoom, String hotelID, String roomID) {
+    public void display(SubscriptionManager subscription, BookRoomManager bookRoom, RoomManager room, String hotelID, String roomID) {
         //application.clrscr();
         //super.display();
         System.out.println();
@@ -49,8 +46,19 @@ public class BookRoom extends ConsolePage {
             LocalDateTime finalCheckIn = checkIn;
             LocalDateTime finalCheckOut = checkOut;
 
+               // int pricePerNight =bookRoom.seePricePerNightOfRoom(hotelID,roomID);
+
+            int pricePerNight = Integer.parseInt(room.fromDatabase(new HashMap<>(){{
+                put("hotelID",hotelID);
+                put("roomID", roomID);
+            }}).get(0).get("pricePerNight"));
+
             Duration duration = Duration.between(finalCheckIn, finalCheckOut);
-            System.out.printf("Your Total Money is %s VND.\n",duration.toHours()/24*bookRoom.seePricePerNightOfRoom(hotelID,roomID));
+
+                System.out.println(duration.toMinutes());
+                System.out.println(pricePerNight);
+
+            System.out.printf("Your Total Money is %d VND.\n",duration.toMinutes()*pricePerNight/(24*60));
 
             System.out.println("Do you want to continue ?");
             System.out.println("1. Yes");
